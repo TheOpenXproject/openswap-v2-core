@@ -5,10 +5,9 @@ pragma solidity 0.6.12;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "./OpenSwapToken.sol";
-import "./Ownable.sol";
 
 
-contract OpenSwapBridge is Ownable, ReentrancyGuard {
+contract OpenSwapBridge is ReentrancyGuard {
 	IERC20 openswapV1;
 	OpenSwapToken openswapV2;
 	address burnAddress = 0xdEad000000000000000000000000000000000000;
@@ -33,6 +32,4 @@ contract OpenSwapBridge is Ownable, ReentrancyGuard {
 		emit Bridge(msg.sender, _amount);
 		
 	}
-
-
 }

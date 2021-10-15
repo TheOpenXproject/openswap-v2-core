@@ -25,12 +25,12 @@ import "./Ownable.sol";
 
 contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     IOpenVote public voteToken;
-    address devAddr;
-    address bridgeAddress;
-    address bridgeSetter;
-    bool bridgeOpen = true;
+    address public devAddr;
+    address public bridgeAddress;
+    address public bridgeSetter;
+    bool public bridgeOpen = true;
 
-    uint256 burnCount;
+    uint256 public burnCount;
 
 
     event Mint(address indexed user, uint amount);
@@ -61,7 +61,6 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     constructor(IOpenVote _voteAddress) public{
         devAddr = msg.sender;
         voteToken = _voteAddress;
-        _mint(0xc37ea794aB7E82e3fe7465AE7674EeD7e7eE39C3, 1444000000000000000000000000);
     }
 
     function mint(address _to, uint256 _amount) public onlyOwner {

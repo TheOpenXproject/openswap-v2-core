@@ -46,10 +46,13 @@ contract MasterChef is Ownable, ReentrancyGuard {
         uint256 lastRewardBlock; // Last block number that SUSHIs distribution occurs.
         uint256 accOpenSwapPerShare; // Accumulated SUSHIs per share, times 1e12. See below.
     }
+
     // The OpenSwap TOKEN!
     OpenSwapToken public OpenSwap;
     // Dev address.
     address public devaddr;
+    //Dev mint devisor, can only be increased, reducing percentage.
+    uint8 public devDivisor = 8; // 8 == 12.5% // 9 == 11% // 10 == 10%  // 11 == 9%
     // Reward collector address for blocktime change
     address public rewardCollector;
     // LP Depositor address for blocktime change
@@ -61,7 +64,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     //Amount of sushis per Second
     uint256 public OpenSwapPerSecond;
     // Bonus muliplier for early OpenSwap makers.
-    uint256 public constant BONUS_MULTIPLIER = 13;
+    uint256 public constant BONUS_MULTIPLIER = 1;
     // Info of each pool.
     PoolInfo[] public poolInfo;
     // Info of each user that stakes LP tokens.
@@ -70,8 +73,6 @@ contract MasterChef is Ownable, ReentrancyGuard {
     mapping(address => bool) public isUserRegisty;
     //Mapping to check if farm exists
     mapping(IERC20 => bool) public poolExistence;
-    // User Database to Execute Blocktime Change
-    address[] public userRegistry;
     // Total allocation poitns. Must be the sum of all allocation points in all pools.
     uint256 public totalAllocPoint = 0;
     // The block number when OpenSwap mining starts.
@@ -81,6 +82,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     // Current Blocktime in Milliseconds
     uint256 public currentBlocktime;
 
+    event DevFundLowered(uint8 currentAmount);
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
     event RewardChange(uint256 OpenSwapPerBlock, uint256 Blocktime);
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
@@ -101,8 +103,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
    }
 
    modifier validPID(uint256 _pid){
-    uint256 length = poolInfo.length;
-    require(_pid < length, "INVALID POOL ID");
+    require(_pid < poolInfo.length, "INVALID POOL ID");
     _;
    }
 
@@ -113,9 +114,8 @@ contract MasterChef is Ownable, ReentrancyGuard {
         } catch {
             isToken = false;
         }
-        require(poolExistence[_lpToken] == false, "nonDuplicated: duplicated");
+        require(poolExistence[_lpToken] == false, "Cant add an already existing Farm.");
         require(isToken == true, "Can't call balanceOf. Revert.");
-
         _;
     }
 
@@ -331,7 +331,9 @@ contract MasterChef is Ownable, ReentrancyGuard {
 
         if (_amount > 0) {
             uint256 balanceBefore = pool.lpToken.balanceOf(address(this));
-            pool.lpToken.safeTransferFrom(address(msg.sender), address(this), _amount); //does not take user but message sender to take the LP tokens
+
+            //does not take _user but msg.sender to take the LP tokens
+            pool.lpToken.safeTransferFrom(address(msg.sender), address(this), _amount);
             uint256 finalAmount = pool.lpToken.balanceOf(address(this)).sub(balanceBefore);
             user.amount = user.amount.add(finalAmount);
         }
@@ -380,8 +382,13 @@ contract MasterChef is Ownable, ReentrancyGuard {
         }
 
         user.rewardDebt = user.amount.mul(pool.accOpenSwapPerShare).div(1e12);
-       
         emit Withdraw(_user, _pid, _amount);
+    }
+
+    function collectAll() public {
+        for (uint256 i = 0; i < poolInfo.length-1 ; i++) {
+          withdraw(i, 0);
+        }
     }
 
     // Withdraw without caring about rewards. EMERGENCY ONLY.
@@ -395,7 +402,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     }
 
     // Safe OpenSwap transfer function, just in case if rounding error causes pool to not have enough SUSHIs.
-        function safeTokenTransfer(address _to, uint256 _amount) internal {
+    function safeTokenTransfer(address _to, uint256 _amount) internal {
         uint256 tokenBal = OpenSwap.balanceOf(address(this));
         bool transferSuccess = false;
         if (_amount > tokenBal) {
@@ -406,14 +413,26 @@ contract MasterChef is Ownable, ReentrancyGuard {
         require(transferSuccess, "safeTokenTransfer: transfer failed");
     }
 
+    function lowerDevFund() public onlyOwner{
+        require(devDivisor < 255, 'Max devDivisor achieved.'); // prevents overflow
+        devDivisor += 1;
+        emit DevFundLowered(devDivisor);
+    }
+
     // Update dev address by the previous dev.
     function dev(address _devaddr) public {
         require(msg.sender == devaddr, "the dev says: Access unGranted");
         devaddr = _devaddr;
     }
 
-       function collector(address _collectoraddr) public {
+    function collector(address _collectoraddr) public {
         require(msg.sender == rewardCollector || msg.sender == devaddr, "the dev says: Access unGranted ");
         rewardCollector = _collectoraddr;
+    }
+
+
+    function depositor(address _depositoraddr) public {
+        require(msg.sender == lpDepositor|| msg.sender == devaddr, "the dev says: Access unGranted ");
+        lpDepositor = _depositoraddr;
     }
 }
