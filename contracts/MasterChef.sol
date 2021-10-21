@@ -114,7 +114,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         } catch {
             isToken = false;
         }
-        require(poolExistence[_lpToken] == false, "Cant add an already existing Farm.");
+        require(poolExistence[_lpToken] == false, "Can't add an already existing Farm.");
         require(isToken == true, "Can't call balanceOf. Revert.");
         _;
     }
@@ -166,7 +166,6 @@ contract MasterChef is Ownable, ReentrancyGuard {
     }
 
     // Add a new lp to the pool. Can only be called by the owner.
-    // XXX DO NOT add the same LP token more than once. Rewards will be messed up if you do.
     function add(
         uint256 _allocPoint,
         IERC20 _lpToken,
@@ -409,27 +408,27 @@ contract MasterChef is Ownable, ReentrancyGuard {
         }
         require(transferSuccess, "safeTokenTransfer: transfer failed");
     }
-    //allows dev to lower his reward mint percentage.
+    //allows dev to lower his reward mint percentage by increasing divisor.
     function lowerDevFund() public onlyOwner{
-        require(devDivisor < 255, 'Max devDivisor achieved.'); // prevents overflow
+        require(devDivisor < 255, 'Thats it Folks !'); // prevents overflow
         devDivisor += 1;
         emit DevFundLowered(devDivisor);
     }
 
     // Update dev address by the previous dev.
     function dev(address _devaddr) public {
-        require(msg.sender == devaddr, "the dev says: Access unGranted");
+        require(msg.sender == devaddr, "The Dev says: Non.");
         devaddr = _devaddr;
     }
 
     function collector(address _collectoraddr) public {
-        require(msg.sender == rewardCollector || msg.sender == devaddr, "the dev says: Access unGranted ");
+        require(msg.sender == rewardCollector || msg.sender == devaddr, "The Dev says: Non. ");
         rewardCollector = _collectoraddr;
     }
 
 
     function depositor(address _depositoraddr) public {
-        require(msg.sender == lpDepositor|| msg.sender == devaddr, "the dev says: Access unGranted ");
+        require(msg.sender == lpDepositor|| msg.sender == devaddr, "The dev says: Non. ");
         lpDepositor = _depositoraddr;
     }
 }

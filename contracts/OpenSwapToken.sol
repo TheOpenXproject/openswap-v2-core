@@ -38,7 +38,6 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     event BridgeAddressChange(address indexed oldAddr, address indexed newAddr);
     event BridgeClosed(bool isClosed);
     event DevChanged(address indexed oldAddr, address indexed newAddr);
-    event BridgeSetterChanged(address indexed oldAddr, address indexed newAddr);
    
     modifier bridgeChecks{
         require(msg.sender == bridgeAddress, "Revert: must be called by bridge.");
@@ -91,5 +90,4 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
         _burn(_account, _amount);
         burnCount = burnCount + _amount;
     }
-
 }

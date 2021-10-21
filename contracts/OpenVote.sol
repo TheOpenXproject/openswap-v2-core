@@ -20,7 +20,7 @@ import "./Ownable.sol";
 
 
 
-contract OpenVote is ERC20SNT("Openions", "OPNION", address(0)), Ownable {
+contract OpenVote is ERC20SNT("Opinions", "OPNION", address(0)), Ownable {
 
     function mint(address _to, uint256 _amount) public onlyOwner{
         _mint(_to, _amount);
