@@ -29,6 +29,7 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     address public bridgeAddress;
     address public bridgeSetter;
     bool public bridgeOpen = true;
+    bool public bridgeSet = false;
 
     uint256 public burnCount;
 
@@ -76,10 +77,10 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     }
 
     function setBridgeAddress(address _bridgeAddress) public onlyBridgeSetter {
-        require(bridgeAddress == address(0), "Can only be set once" );
+        require(bridgeSet == false, "Can only be set once");
         emit BridgeAddressChange(bridgeAddress,_bridgeAddress);
         bridgeAddress = _bridgeAddress;
-
+        bridgeSet = true;
     }
 
     function setBridgeSetter(address _bridgeSetter) public onlyBridgeSetter{
