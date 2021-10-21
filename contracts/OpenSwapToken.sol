@@ -61,6 +61,7 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
 
     constructor(IOpenVote _voteAddress) public{
         devAddr = msg.sender;
+        bridgeSetter = msg.sender;
         voteToken = _voteAddress;
     }
 
