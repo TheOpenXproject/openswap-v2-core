@@ -27,7 +27,6 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     IOpenVote public voteToken;
     address public devAddr;
     address public bridgeAddress;
-    address public bridgeSetter;
     bool public bridgeOpen = true;
     bool public bridgeSet = false;
 
@@ -48,12 +47,6 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
         _;
     }
 
-    modifier onlyBridgeSetter{
-        require(bridgeSetter != address(0), "Revert: Bridge can't be set after being revoked.");
-        require(msg.sender == bridgeSetter, "Revert: must be called by BridgeSetter.");
-        _;
-    }
-
     modifier onlyDev{
         require(msg.sender == devAddr);
         _;
@@ -61,7 +54,6 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
 
     constructor(IOpenVote _voteAddress) public{
         devAddr = msg.sender;
-        bridgeSetter = msg.sender;
         voteToken = _voteAddress;
     }
 
@@ -77,16 +69,11 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
         emit BridgeMint(_to, _amount);
     }
 
-    function setBridgeAddress(address _bridgeAddress) public onlyBridgeSetter {
+    function setBridgeAddress(address _bridgeAddress) public onlyDev {
         require(bridgeSet == false, "Can only be set once");
         emit BridgeAddressChange(bridgeAddress,_bridgeAddress);
         bridgeAddress = _bridgeAddress;
         bridgeSet = true;
-    }
-
-    function setBridgeSetter(address _bridgeSetter) public onlyBridgeSetter{
-        emit BridgeSetterChanged(bridgeSetter, _bridgeSetter);
-        bridgeSetter = _bridgeSetter;
     }
 
     function closeBridge() public onlyDev{

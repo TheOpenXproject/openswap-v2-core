@@ -89,9 +89,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_openswapV1\",\"type\":\"address\"},{\"internalType\":\"contract OpenSwapToken\",\"name\":\"_openswapV2\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Bridge\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"burnAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"convert\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openswapV1\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openswapV2\",\"outputs\":[{\"internalType\":\"contract OpenSwapToken\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OpenSwapBridge.sol\":\"OpenSwapBridge\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xca0c2396dbeb3503b51abf4248ebf77a1461edad513c01529df51850a012bee3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://991b44ff44e0496e8554a90f4c0512c28faed45104d40430019f3c67ea67740e\",\"dweb:/ipfs/Qmc3nRapVbcctELoZS5qe17zLkFB3bETBfwzCTMF1CSuGE\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f\",\"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x8bbbc2f5c10065ee272592ae0a7a6ceb23de2fbd81564ee0bb015ecf404d5f61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b95e56c1640d0ef789fc5c16269e141e992f6c8ac97cc6d377bd3825e9cab182\",\"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK\"]},\"project:/contracts/OpenSwapBridge.sol\":{\"keccak256\":\"0xab17b752c86df45eed6ab775d26b72cbe33b0f44adcd2483d469bcf286b451d2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://47eb08a0d7b59ea4dd8e0713531ac8a8114bb4d23d973df1d377f0e1c7f1cecc\",\"dweb:/ipfs/QmZ9PWMLXWJPopMLvfVHRQcSVQ1p68VBynsBKgYKtKxB3d\"]},\"project:/contracts/OpenSwapToken.sol\":{\"keccak256\":\"0xed4febc6f9e68a71656e17a8e926d44e20389cc72efa8b91867ffedb1e6f355c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bde07d125db15d17762a7f6ff4871afd942710c35446464cfd00820a064a5c3c\",\"dweb:/ipfs/QmPA1TXRUdXx7w8kcGcezZ4Bd1paQdLZpGamgMhxjCNJLU\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x01826b31aa2cfcf8b0f78987c794ae29f5d2299063b2ab12bceecde7ceaaf5bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd6ffe16781e741227b515a07ebf7d657c1c5752e1d98a6beb8ca7c6140f3bf9\",\"dweb:/ipfs/QmVz4XrgJcLDSixEYPZtbNmVMpgx72tcqt4HXztXMmcXzr\"]},\"project:/contracts/interfaces/IOpenVote.sol\":{\"keccak256\":\"0x5ba2a19e4e79b259edc17cc935e8bdb3e7eb93cebf46fc8dfdf971467954a1ff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75359f5a67369cdca6e561648d02b4405748fdcce734566f77d3b98c7429802d\",\"dweb:/ipfs/QmeGPjjxYccurRNocppePFhsLn6DQcg9MK25kWG88NEkF2\"]}},\"version\":1}",
-  "bytecode": "0x6080604052600380546001600160a01b03191661dead60901b17905534801561002757600080fd5b506040516103d13803806103d18339818101604052604081101561004a57600080fd5b5080516020909101516001600081905580546001600160a01b039384166001600160a01b0319918216179091556002805493909216921691909117905561033b806100966000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631615752b146100515780636f1976e51461007557806370d5ae051461007d578063a3908e1b14610085575b600080fd5b6100596100a4565b604080516001600160a01b039092168252519081900360200190f35b6100596100b3565b6100596100c2565b6100a26004803603602081101561009b57600080fd5b50356100d1565b005b6001546001600160a01b031681565b6002546001600160a01b031681565b6003546001600160a01b031681565b60026000541415610129576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b6002600055333214610182576040805162461bcd60e51b815260206004820152601760248201527f4d7573742062652063616c6c6564206469726563746c79000000000000000000604482015290519081900360640190fd5b600154600354604080516323b872dd60e01b81523360048201526001600160a01b03928316602482015260448101859052905160009392909216916323b872dd9160648082019260209290919082900301818787803b1580156101e457600080fd5b505af11580156101f8573d6000803e3d6000fd5b505050506040513d602081101561020e57600080fd5b5051905060018115151461025b576040805162461bcd60e51b815260206004820152600f60248201526e1d1c985b9cd9995c8819985a5b1959608a1b604482015290519081900360640190fd5b600254604080516346154c9f60e11b81523360048201526024810185905290516001600160a01b0390921691638c2a993e9160448082019260009290919082900301818387803b1580156102ae57600080fd5b505af11580156102c2573d6000803e3d6000fd5b50506040805185815290513393507f22e3f162fca16dc0fcfb65eddf406531a0c555a2c24c58cf5d10fc2d202a882e92509081900360200190a25050600160005556fea2646970667358221220ec306e3c2eb4e9d026a6d01b583a60939ec141be8ebbc27a0cd896ab36feacda64736f6c634300060c0033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631615752b146100515780636f1976e51461007557806370d5ae051461007d578063a3908e1b14610085575b600080fd5b6100596100a4565b604080516001600160a01b039092168252519081900360200190f35b6100596100b3565b6100596100c2565b6100a26004803603602081101561009b57600080fd5b50356100d1565b005b6001546001600160a01b031681565b6002546001600160a01b031681565b6003546001600160a01b031681565b60026000541415610129576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b6002600055333214610182576040805162461bcd60e51b815260206004820152601760248201527f4d7573742062652063616c6c6564206469726563746c79000000000000000000604482015290519081900360640190fd5b600154600354604080516323b872dd60e01b81523360048201526001600160a01b03928316602482015260448101859052905160009392909216916323b872dd9160648082019260209290919082900301818787803b1580156101e457600080fd5b505af11580156101f8573d6000803e3d6000fd5b505050506040513d602081101561020e57600080fd5b5051905060018115151461025b576040805162461bcd60e51b815260206004820152600f60248201526e1d1c985b9cd9995c8819985a5b1959608a1b604482015290519081900360640190fd5b600254604080516346154c9f60e11b81523360048201526024810185905290516001600160a01b0390921691638c2a993e9160448082019260009290919082900301818387803b1580156102ae57600080fd5b505af11580156102c2573d6000803e3d6000fd5b50506040805185815290513393507f22e3f162fca16dc0fcfb65eddf406531a0c555a2c24c58cf5d10fc2d202a882e92509081900360200190a25050600160005556fea2646970667358221220ec306e3c2eb4e9d026a6d01b583a60939ec141be8ebbc27a0cd896ab36feacda64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_openswapV1\",\"type\":\"address\"},{\"internalType\":\"contract OpenSwapToken\",\"name\":\"_openswapV2\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Bridge\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"burnAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"convert\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openswapV1\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openswapV2\",\"outputs\":[{\"internalType\":\"contract OpenSwapToken\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OpenSwapBridge.sol\":\"OpenSwapBridge\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xca0c2396dbeb3503b51abf4248ebf77a1461edad513c01529df51850a012bee3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://991b44ff44e0496e8554a90f4c0512c28faed45104d40430019f3c67ea67740e\",\"dweb:/ipfs/Qmc3nRapVbcctELoZS5qe17zLkFB3bETBfwzCTMF1CSuGE\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f\",\"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x8bbbc2f5c10065ee272592ae0a7a6ceb23de2fbd81564ee0bb015ecf404d5f61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b95e56c1640d0ef789fc5c16269e141e992f6c8ac97cc6d377bd3825e9cab182\",\"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK\"]},\"project:/contracts/OpenSwapBridge.sol\":{\"keccak256\":\"0xab17b752c86df45eed6ab775d26b72cbe33b0f44adcd2483d469bcf286b451d2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://47eb08a0d7b59ea4dd8e0713531ac8a8114bb4d23d973df1d377f0e1c7f1cecc\",\"dweb:/ipfs/QmZ9PWMLXWJPopMLvfVHRQcSVQ1p68VBynsBKgYKtKxB3d\"]},\"project:/contracts/OpenSwapToken.sol\":{\"keccak256\":\"0xe2e3547eec7cc66585acd687ce57ea72f8f6c7c434f43a3744468ed3c254cb1d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c086c6af598b9d52e876382a628accc3900d4ded709d5d0dda29a68ec9ef7f58\",\"dweb:/ipfs/QmbUjSKSBL4ph1jRgJsF3HvEF4yCF1HboDLfiJQcAvzW6H\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x01826b31aa2cfcf8b0f78987c794ae29f5d2299063b2ab12bceecde7ceaaf5bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd6ffe16781e741227b515a07ebf7d657c1c5752e1d98a6beb8ca7c6140f3bf9\",\"dweb:/ipfs/QmVz4XrgJcLDSixEYPZtbNmVMpgx72tcqt4HXztXMmcXzr\"]},\"project:/contracts/interfaces/IOpenVote.sol\":{\"keccak256\":\"0x5ba2a19e4e79b259edc17cc935e8bdb3e7eb93cebf46fc8dfdf971467954a1ff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://75359f5a67369cdca6e561648d02b4405748fdcce734566f77d3b98c7429802d\",\"dweb:/ipfs/QmeGPjjxYccurRNocppePFhsLn6DQcg9MK25kWG88NEkF2\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600380546001600160a01b03191661dead60901b17905534801561002757600080fd5b506040516103d13803806103d18339818101604052604081101561004a57600080fd5b5080516020909101516001600081905580546001600160a01b039384166001600160a01b0319918216179091556002805493909216921691909117905561033b806100966000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631615752b146100515780636f1976e51461007557806370d5ae051461007d578063a3908e1b14610085575b600080fd5b6100596100a4565b604080516001600160a01b039092168252519081900360200190f35b6100596100b3565b6100596100c2565b6100a26004803603602081101561009b57600080fd5b50356100d1565b005b6001546001600160a01b031681565b6002546001600160a01b031681565b6003546001600160a01b031681565b60026000541415610129576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b6002600055333214610182576040805162461bcd60e51b815260206004820152601760248201527f4d7573742062652063616c6c6564206469726563746c79000000000000000000604482015290519081900360640190fd5b600154600354604080516323b872dd60e01b81523360048201526001600160a01b03928316602482015260448101859052905160009392909216916323b872dd9160648082019260209290919082900301818787803b1580156101e457600080fd5b505af11580156101f8573d6000803e3d6000fd5b505050506040513d602081101561020e57600080fd5b5051905060018115151461025b576040805162461bcd60e51b815260206004820152600f60248201526e1d1c985b9cd9995c8819985a5b1959608a1b604482015290519081900360640190fd5b600254604080516346154c9f60e11b81523360048201526024810185905290516001600160a01b0390921691638c2a993e9160448082019260009290919082900301818387803b1580156102ae57600080fd5b505af11580156102c2573d6000803e3d6000fd5b50506040805185815290513393507f22e3f162fca16dc0fcfb65eddf406531a0c555a2c24c58cf5d10fc2d202a882e92509081900360200190a25050600160005556fea264697066735822122031df884fab0c13aaf4c815d0da9b41f5f0befb5368a4e4b51d926212b4b6c68664736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631615752b146100515780636f1976e51461007557806370d5ae051461007d578063a3908e1b14610085575b600080fd5b6100596100a4565b604080516001600160a01b039092168252519081900360200190f35b6100596100b3565b6100596100c2565b6100a26004803603602081101561009b57600080fd5b50356100d1565b005b6001546001600160a01b031681565b6002546001600160a01b031681565b6003546001600160a01b031681565b60026000541415610129576040805162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015290519081900360640190fd5b6002600055333214610182576040805162461bcd60e51b815260206004820152601760248201527f4d7573742062652063616c6c6564206469726563746c79000000000000000000604482015290519081900360640190fd5b600154600354604080516323b872dd60e01b81523360048201526001600160a01b03928316602482015260448101859052905160009392909216916323b872dd9160648082019260209290919082900301818787803b1580156101e457600080fd5b505af11580156101f8573d6000803e3d6000fd5b505050506040513d602081101561020e57600080fd5b5051905060018115151461025b576040805162461bcd60e51b815260206004820152600f60248201526e1d1c985b9cd9995c8819985a5b1959608a1b604482015290519081900360640190fd5b600254604080516346154c9f60e11b81523360048201526024810185905290516001600160a01b0390921691638c2a993e9160448082019260009290919082900301818387803b1580156102ae57600080fd5b505af11580156102c2573d6000803e3d6000fd5b50506040805185815290513393507f22e3f162fca16dc0fcfb65eddf406531a0c555a2c24c58cf5d10fc2d202a882e92509081900360200190a25050600160005556fea264697066735822122031df884fab0c13aaf4c815d0da9b41f5f0befb5368a4e4b51d926212b4b6c68664736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "207:716:9:-:0;;;314:71;;;-1:-1:-1;;;;;;314:71:9;-1:-1:-1;;;314:71:9;;;389:126;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;389:126:9;;;;;;;1645:1:7;1760:7;:22;;;459:24:9;;-1:-1:-1;;;;;459:24:9;;;-1:-1:-1;;;;;;459:24:9;;;;;;;487:10;:24;;;;;;;;;;;;;;207:716;;;;;;",
   "deployedSourceMap": "207:716:9:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;253:24;;;:::i;:::-;;;;-1:-1:-1;;;;;253:24:9;;;;;;;;;;;;;;280:31;;;:::i;314:71::-;;;:::i;569:352::-;;;;;;;;;;;;;;;;-1:-1:-1;569:352:9;;:::i;:::-;;253:24;;;-1:-1:-1;;;;;253:24:9;;:::o;280:31::-;;;-1:-1:-1;;;;;280:31:9;;:::o;314:71::-;;;-1:-1:-1;;;;;314:71:9;;:::o;569:352::-;1688:1:7;2277:7;;:19;;2269:63;;;;;-1:-1:-1;;;2269:63:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;1688:1;2407:7;:18;635:10:9::1;649:9;635:23;627:59;;;::::0;;-1:-1:-1;;;627:59:9;;::::1;;::::0;::::1;::::0;::::1;::::0;;;;::::1;::::0;;;;;;;;;;;;;::::1;;726:10;::::0;762:11:::1;::::0;726:57:::1;::::0;;-1:-1:-1;;;726:57:9;;750:10:::1;726:57;::::0;::::1;::::0;-1:-1:-1;;;;;762:11:9;;::::1;726:57:::0;;;;;;;;;;;;691:12:::1;::::0;726:10;;;::::1;::::0;:23:::1;::::0;:57;;;;;::::1;::::0;;;;;;;;;691:12;726:10;:57;::::1;;::::0;::::1;;;;::::0;::::1;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;::::0;::::1;;-1:-1:-1::0;726:57:9;;-1:-1:-1;807:4:9::1;796:15:::0;::::1;;;788:43;;;::::0;;-1:-1:-1;;;788:43:9;;::::1;;::::0;::::1;::::0;::::1;::::0;;;;-1:-1:-1;;;788:43:9;;;;;;;;;;;;;::::1;;836:10;::::0;:42:::1;::::0;;-1:-1:-1;;;836:42:9;;858:10:::1;836:42;::::0;::::1;::::0;;;;;;;;;-1:-1:-1;;;;;836:10:9;;::::1;::::0;:21:::1;::::0;:42;;;;;:10:::1;::::0;:42;;;;;;;;:10;;:42;::::1;;::::0;::::1;;;;::::0;::::1;;;;;;;;;;;;::::0;::::1;;;;;-1:-1:-1::0;;887:27:9::1;::::0;;;;;;;894:10:::1;::::0;-1:-1:-1;887:27:9::1;::::0;-1:-1:-1;887:27:9;;;;::::1;::::0;;::::1;-1:-1:-1::0;;1645:1:7;2580:7;:22;569:352:9:o",
@@ -146,7 +146,7 @@
         "id": 3442,
         "nodeType": "ImportDirective",
         "scope": 3527,
-        "sourceUnit": 3828,
+        "sourceUnit": 3782,
         "src": "175:29:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -231,7 +231,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+              "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
               "typeString": "contract OpenSwapToken"
             },
             "typeName": {
@@ -239,10 +239,10 @@
               "id": 3447,
               "name": "OpenSwapToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3827,
+              "referencedDeclaration": 3781,
               "src": "280:13:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                 "typeString": "contract OpenSwapToken"
               }
             },
@@ -365,7 +365,7 @@
                       "referencedDeclaration": 3448,
                       "src": "487:10:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                        "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                         "typeString": "contract OpenSwapToken"
                       }
                     },
@@ -380,13 +380,13 @@
                       "referencedDeclaration": 3455,
                       "src": "500:11:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                        "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                         "typeString": "contract OpenSwapToken"
                       }
                     },
                     "src": "487:24:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                      "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                       "typeString": "contract OpenSwapToken"
                     }
                   },
@@ -450,7 +450,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                    "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                     "typeString": "contract OpenSwapToken"
                   },
                   "typeName": {
@@ -458,10 +458,10 @@
                     "id": 3454,
                     "name": "OpenSwapToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3827,
+                    "referencedDeclaration": 3781,
                     "src": "421:13:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                      "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                       "typeString": "contract OpenSwapToken"
                     }
                   },
@@ -1096,7 +1096,7 @@
                         "referencedDeclaration": 3448,
                         "src": "836:10:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_OpenSwapToken_$3827",
+                          "typeIdentifier": "t_contract$_OpenSwapToken_$3781",
                           "typeString": "contract OpenSwapToken"
                         }
                       },
@@ -1107,7 +1107,7 @@
                       "lValueRequested": false,
                       "memberName": "bridgeMint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3723,
+                      "referencedDeclaration": 3694,
                       "src": "836:21:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1361,7 +1361,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 3828,
+          "SourceUnit": 3782,
           "absolutePath": "project:/contracts/OpenSwapToken.sol",
           "file": "./OpenSwapToken.sol",
           "scope": 3527,
@@ -1462,7 +1462,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "OpenSwapToken",
-                  "referencedDeclaration": 3827,
+                  "referencedDeclaration": 3781,
                   "type": "contract OpenSwapToken"
                 },
                 "id": 3447,
@@ -1587,7 +1587,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "OpenSwapToken",
-                          "referencedDeclaration": 3827,
+                          "referencedDeclaration": 3781,
                           "type": "contract OpenSwapToken"
                         },
                         "id": 3454,
@@ -2418,7 +2418,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "bridgeMint",
-                              "referencedDeclaration": 3723,
+                              "referencedDeclaration": 3694,
                               "type": "function (address,uint256) external"
                             },
                             "children": [
@@ -2625,7 +2625,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-21T19:23:03.659Z",
+  "updatedAt": "2021-10-21T19:36:32.501Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
