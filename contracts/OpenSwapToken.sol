@@ -76,6 +76,7 @@ contract OpenSwapToken is ERC20("OpenSwap Token", "OpenX"), Ownable {
     }
 
     function setBridgeAddress(address _bridgeAddress) public onlyBridgeSetter {
+        require(bridgeAddress == address(0), "Can only be set once" );
         emit BridgeAddressChange(bridgeAddress,_bridgeAddress);
         bridgeAddress = _bridgeAddress;
 

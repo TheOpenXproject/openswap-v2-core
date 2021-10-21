@@ -156,6 +156,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     function changeBlocktime(uint _currentBlocktime)
         public onlyOwner {
         require(lastBlocktime != _currentBlocktime , "OpenSwap : Blocktime hasn't changed");
+        require(_currentBlocktime <= 4000, "Can't set blockime over 4s.");
         
         massUpdatePools();
 
@@ -281,7 +282,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
             multiplier.mul(OpenSwapPerBlock).mul(pool.allocPoint).div(
                 totalAllocPoint
             );
-        OpenSwap.mint(devaddr, OpenSwapReward.div(10));
+        OpenSwap.mint(devaddr, OpenSwapReward.div(devDivisor));
         OpenSwap.mint(address(this), OpenSwapReward);
         pool.accOpenSwapPerShare = pool.accOpenSwapPerShare.add(
             OpenSwapReward.mul(1e12).div(lpSupply)
@@ -374,11 +375,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
             );
 
         if (pending > 0) {
-            safeTokenTransfer(msg.sender, pending);
-        }
-        if (_amount > 0) {
-            user.amount = user.amount.sub(_amount);           
-            pool.lpToken.safeTransfer(address(msg.sender), _amount);
+            safeTokenTransfer(_user, pending);
         }
 
         user.rewardDebt = user.amount.mul(pool.accOpenSwapPerShare).div(1e12);
@@ -412,7 +409,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         }
         require(transferSuccess, "safeTokenTransfer: transfer failed");
     }
-
+    //allows dev to lower his reward mint percentage.
     function lowerDevFund() public onlyOwner{
         require(devDivisor < 255, 'Max devDivisor achieved.'); // prevents overflow
         devDivisor += 1;

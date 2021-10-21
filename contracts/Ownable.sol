@@ -35,6 +35,7 @@ contract Ownable is OwnableData {
             // Effects
             emit OwnershipTransferred(owner, newOwner);
             owner = newOwner;
+            pendingOwner = address(0);
         } else {
             // Effects
             pendingOwner = newOwner;

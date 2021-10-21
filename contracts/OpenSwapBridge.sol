@@ -8,9 +8,9 @@ import "./OpenSwapToken.sol";
 
 
 contract OpenSwapBridge is ReentrancyGuard {
-	IERC20 openswapV1;
-	OpenSwapToken openswapV2;
-	address burnAddress = 0xdEad000000000000000000000000000000000000;
+	IERC20 public openswapV1;
+	OpenSwapToken public openswapV2;
+	address public burnAddress = 0xdEad000000000000000000000000000000000000;
 
 	constructor(IERC20 _openswapV1, OpenSwapToken _openswapV2) public {
 		openswapV1 = _openswapV1;
