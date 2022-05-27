@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 // Audit on 5-Jan-2021 by Keno and BoringCrypto
+// Modified on 27-May-2022 by Tr4ck3r
 
 // P1 - P3: OK
-pragma solidity 0.6.12;
+pragma solidity ^0.8.0;
 
 // Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol + Claimable.sol
 // Edited by BoringCrypto
@@ -20,7 +21,7 @@ contract Ownable is OwnableData {
     // E1: OK
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
-    constructor () internal {
+    constructor () {
         owner = msg.sender;
         emit OwnershipTransferred(address(0), msg.sender);
     }
